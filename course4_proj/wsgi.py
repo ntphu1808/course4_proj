@@ -10,7 +10,7 @@ https://docs.djangoproject.com/en/3.2/howto/deployment/wsgi/
 import os
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "course4_proj.settings")
-os.environ.setdefault("DJANGO_CONFIGURATION", "Prod")
+os.environ.setdefault("DJANGO_CONFIGURATION", "Prod")  #add this line for Prod setting class
 
 from configurations.wsgi import get_wsgi_application
 
