@@ -53,6 +53,7 @@ class Dev(Configuration):
 
         #our application
         "movies",
+        "gh",
     ]
 
     MIDDLEWARE = [
