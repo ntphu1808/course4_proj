@@ -54,6 +54,9 @@ class Dev(Configuration):
         #our application
         "movies",
         "gh",
+
+        #our extension
+        "django_celery_results",
     ]
 
     MIDDLEWARE = [
@@ -165,3 +168,7 @@ class Dev(Configuration):
 
     with open(os.path.join(BASE_DIR, 'omdb/omdb_apiKey.txt')) as f:
         OMDB_KEY = f.read().strip() #api key omdb
+
+class Prod(Dev):
+  CELERY_RESULT_BACKEND = "django-db"
+  CELERY_BROKER_URL = "redis://localhost:6379/0"
