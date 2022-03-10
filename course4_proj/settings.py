@@ -170,5 +170,8 @@ class Dev(Configuration):
         OMDB_KEY = f.read().strip() #api key omdb
 
 class Prod(Dev):
-  CELERY_RESULT_BACKEND = "django-db"
-  CELERY_BROKER_URL = "redis://localhost:6379/0"
+    CELERY_RESULT_BACKEND = "django-db"
+    CELERY_BROKER_URL = "redis://localhost:6379/0"
+
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    ADMINS = [("Ben", "ben@example.com")] #add admins, the value must be in the form of a list of tuple. [(username, email)]
