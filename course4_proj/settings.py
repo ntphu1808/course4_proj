@@ -170,6 +170,10 @@ class Dev(Configuration):
         OMDB_KEY = f.read().strip() #api key omdb
 
 class Prod(Dev):
+    Dev.INSTALLED_APPS += [
+      "django_celery_beat",   #schedule task app.
+    ]
+
     CELERY_RESULT_BACKEND = "django-db"
     CELERY_BROKER_URL = "redis://localhost:6379/0"
 
